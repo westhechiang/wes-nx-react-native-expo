@@ -5,6 +5,7 @@
   "dependencies": {
     "react-native": "*",
     "expo": "*",
+    "@nrwl/workspace": "12.5.0",
     "nx-react-native-expo": "^0.0.9"
   }
 }
