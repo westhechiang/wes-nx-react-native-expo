@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "dependencies": {
     "react-native": "*",
-    "expo": "*"
+    "expo": "*",
+    "nx-react-native-expo": "^0.0.9"
   }
 }
