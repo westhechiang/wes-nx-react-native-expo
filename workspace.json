@@ -1,7 +1,66 @@
 {
   "version": 2,
-  "projects": {},
+  "projects": {
+    "sample-expo-app": {
+      "root": "apps/sample-expo-app",
+      "sourceRoot": "apps/sample-expo-app/src",
+      "projectType": "application",
+      "generators": {},
+      "targets": {
+        "easbuild": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "cwd": "apps/sample-expo-app",
+            "commands": [
+              {
+                "command": "npx eas-cli build --clear-cache --platform android --non-interactive"
+              }
+            ]
+          }
+        },
+        "bundle": {
+          "executor": "nx-react-native-expo:bundle",
+          "options": {}
+        },
+        "start": {
+          "executor": "nx-react-native-expo:start",
+          "options": {}
+        },
+        "run-ios": {
+          "executor": "nx-react-native-expo:run-ios",
+          "options": {}
+        },
+        "run-android": {
+          "executor": "nx-react-native-expo:run-android",
+          "options": {}
+        },
+        "run-web": {
+          "executor": "nx-react-native-expo:run-web",
+          "options": {}
+        },
+        "publish": {
+          "executor": "nx-react-native-expo:publish",
+          "options": {}
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/sample-expo-app/**/*.{js,ts,tsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/sample-expo-app"],
+          "options": {
+            "jestConfig": "apps/sample-expo-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/workspace"
-  }
+  },
+  "defaultProject": "sample-expo-app"
 }
