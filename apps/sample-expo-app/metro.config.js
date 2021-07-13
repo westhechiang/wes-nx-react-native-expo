@@ -1,4 +1,9 @@
+const { withNxMetro } = require('nx-react-native-expo');
 const { getDefaultConfig } = require('@expo/metro-config');
 
 const defaultConfig = getDefaultConfig(__dirname);
-module.exports = defaultConfig;
+const defaultConfigCopy = { ...defaultConfig };
+const withNXMetroConfig = withNxMetro(defaultConfig);
+withNXMetroConfig.transformer.enableBabelRCLookup = true;
+
+module.exports = withNXMetroConfig;
