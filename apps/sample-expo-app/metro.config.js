@@ -6,5 +6,6 @@ const defaultConfigCopy = { ...defaultConfig };
 const withNXMetroConfig = withNxMetro(defaultConfigCopy);
 // withNXMetroConfig.transformer.enableBabelRCLookup = true;
 // withNXMetroConfig.resolver.resolveRequest = null;
+withNXMetroConfig.watchFolders = [];
 
 module.exports = withNXMetroConfig;
